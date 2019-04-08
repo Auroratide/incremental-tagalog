@@ -2,9 +2,11 @@ import React from 'react';
 import Wordbase from 'Client/components/core/Wordbase';
 import List from './List';
 
+import styles from './style';
+
 const WordListPage = () =>
   <Wordbase.Consumer>{({ query }) =>
-    <div>
+    <div className={styles.lists}>
       <List title="A" words={query.startingWith('a').all()} />
       <List title="B" words={query.startingWith('b').all()} />
       <List title="C" words={query.startingWith('c').all()} />
