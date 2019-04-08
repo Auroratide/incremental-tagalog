@@ -1,3 +1,11 @@
+@import "theme";
+
 .header {
-  background: #FF0000;
+  background: var(--palette-primary);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: var(--typography-lg);
 }
