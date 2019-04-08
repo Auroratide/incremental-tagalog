@@ -1,3 +1,4 @@
+import React from 'react';
 import { withAppContext } from 'Test/enzyme';
 import { allActionsToComplete } from 'Test/behaviour/await';
 import http from 'Test/behaviour/mock-http';
@@ -9,7 +10,7 @@ describe('WordsRouter Behaviour', () => {
   const page = word => withAppContext()
     .withProvider(WordBase.Provider)
     .withRoute(`/words/${word}`)
-    .mount(WordsRouter);
+    .mount(<WordsRouter />);
   
   beforeEach(() => {
     http
@@ -19,6 +20,11 @@ describe('WordsRouter Behaviour', () => {
           .withId('salamat')
           .withTagalog('salamat')
           .withDefinition('thank you')
+          .build(),
+        new WordBulder()
+          .withId('kumasta')
+          .withTagalog('kumasta')
+          .withDefinition('hello')
           .build()]
       });
   });
@@ -34,6 +40,18 @@ describe('WordsRouter Behaviour', () => {
       
       expect(wrapper.text()).toContain('salamat');
       expect(wrapper.text()).toContain('thank you');
+    });
+  });
+
+  describe('Word List', () => {
+    it('should render all the words', async () => {
+      const wrapper = page('');
+      
+      await allActionsToComplete();
+      wrapper.update();
+      
+      expect(wrapper.text()).toContain('salamat');
+      expect(wrapper.text()).toContain('kumasta');
     });
   });
 });

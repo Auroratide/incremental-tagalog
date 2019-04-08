@@ -30,8 +30,8 @@ class MountContext {
       return React.createElement(provider, {}, all);
     }, <MemoryRouter initialEntries={[this.route]} initialIndex={0}>
       <Switch>
-        <Route path='/words' component={component} />
-        <Route path='' component={component} />
+        <Route path='/words' render={() => component} />
+        <Route path='' render={() => component} />
       </Switch>
     </MemoryRouter>));
   }
