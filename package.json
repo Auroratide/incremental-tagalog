@@ -69,5 +69,11 @@
     "webpack-cli": "^3.3.0",
     "webpack-merge": "^4.2.1",
     "zaha": "^0.1.5"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css)$": "identity-obj-proxy",
+      "style$": "identity-obj-proxy"
+    }
   }
 }

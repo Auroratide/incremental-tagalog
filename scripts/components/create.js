@@ -51,7 +51,7 @@ fs.writeFileSync(path.join(SRC_PATH, componentPath, `${name}.jsx`), componentCon
 fs.writeFileSync(path.join(SRC_PATH, componentPath, 'index.js'), indexContents);
 fs.writeFileSync(path.join(TEST_PATH, componentPath, `${name}.spec.jsx`), testContents);
 
-const styleTemplatePath = path.join(__dirname, 'templates', 'styled', 'style.css');
+const styleTemplatePath = path.join(__dirname, 'templates', 'style.css');
 const styleContents = replaceNames(fs.readFileSync(styleTemplatePath, ENCODING));
 fs.writeFileSync(path.join(SRC_PATH, componentPath, 'style.css'), styleContents);
 
