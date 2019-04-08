@@ -1,15 +1,15 @@
 import { withAppContext } from 'Test/enzyme';
 import { allActionsToComplete } from 'Test/behaviour/await';
 import http from 'Test/behaviour/mock-http';
-import WordPage from 'Client/components/pages/WordPage';
+import WordsRouter from 'Client/components/pages/WordsRouter';
 import WordBase from 'Client/components/core/Wordbase';
 import WordBulder from 'Test/builders/WordBuilder';
 
-describe('WordPage Behaviour', () => {
+describe('WordsRouter Behaviour', () => {
   const page = word => withAppContext()
     .withProvider(WordBase.Provider)
     .withRoute(`/words/${word}`)
-    .mount(WordPage);
+    .mount(WordsRouter);
   
   beforeEach(() => {
     http
@@ -25,13 +25,15 @@ describe('WordPage Behaviour', () => {
 
   afterEach(() => http.reset());
   
-  it('should render the word', async () => {
-    const wrapper = page('salamat');
-
-    await allActionsToComplete();
-    wrapper.update();
-
-    expect(wrapper.text()).toContain('salamat');
-    expect(wrapper.text()).toContain('thank you');
+  describe('Single Word', () => {
+    it('should render the word', async () => {
+      const wrapper = page('salamat');
+      
+      await allActionsToComplete();
+      wrapper.update();
+      
+      expect(wrapper.text()).toContain('salamat');
+      expect(wrapper.text()).toContain('thank you');
+    });
   });
 });

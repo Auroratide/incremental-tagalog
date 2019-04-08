@@ -6,4 +6,8 @@ export default class Query {
   word(word) {
     return this.words.find(w => w.id === word);
   }
+
+  all() {
+    return this.words;
+  }
 }
