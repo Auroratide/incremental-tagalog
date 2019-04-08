@@ -17,8 +17,9 @@
     "lint:js": "eslint '{src,test}/**/*.{js,jsx}'",
     "lint:css": "stylelint 'src/**/*.css'",
     "test": "npm-run-all lint test:all",
-    "test:all": "npm-run-all test:unit",
+    "test:all": "npm-run-all test:unit test:behaviour",
     "test:unit": "NODE_ENV=test jest test/unit",
+    "test:behaviour": "NODE_ENV=test jest test/behaviour",
     "components:create": "node scripts/components/create"
   },
   "author": "",
