@@ -1,0 +1,7 @@
+@import "theme";
+
+.card {
+  background: var(--palette-secondary);
+  padding: 1rem;
+  border: 0.125rem solid rgba(0, 0, 0, 0.1);
+}
