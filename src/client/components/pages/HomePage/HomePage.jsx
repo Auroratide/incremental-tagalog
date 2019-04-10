@@ -4,7 +4,7 @@ import styles from './style';
 
 const HomePage = () =>
   <div className={styles['home-page']}>
-    <Card>Index</Card>
+    <Card to="/words">Index</Card>
   </div>;
 
 export default HomePage;
