@@ -7,9 +7,11 @@ import styles from './style';
 const List = ({ title, words = [] }) =>
   <div className={styles.list}>
     <h2>{title}</h2>
-    <div>
-      {words.map(word => <Link to={`/words/${word.id}`} key={word.id}>{word.tagalog}</Link>)}
-    </div>
+    <ul className={styles.words}>
+      {words.map(word => <li key={word.id}>
+        <Link to={`/words/${word.id}`}>{word.tagalog}</Link>
+      </li>)}
+    </ul>
   </div>;
 
 List.propTypes = {

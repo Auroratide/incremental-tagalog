@@ -7,6 +7,12 @@
   margin: 0 1rem 1rem;
 }
 
+.words {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 @media (--breakpoint-md) {
   .list {
     margin: 0;
