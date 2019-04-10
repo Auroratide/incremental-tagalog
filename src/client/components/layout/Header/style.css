@@ -2,7 +2,7 @@
 
 .header {
   background: var(--palette-primary);
-  padding: 1rem;
+  padding: 1rem 0;
   margin-bottom: 2rem;
 }
 
