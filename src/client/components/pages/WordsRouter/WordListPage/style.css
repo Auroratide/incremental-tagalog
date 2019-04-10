@@ -1,8 +1,5 @@
 @import "theme";
 
-.lists {
-}
-
 @media (--breakpoint-md) {
   .lists {
     display: grid;
