@@ -5,6 +5,7 @@ import Wordbase from 'Client/components/core/Wordbase';
 
 import Page from 'Client/components/layout/Page';
 import WordsRouter from 'Client/components/pages/WordsRouter';
+import FlashcardSetsRouter from 'Client/components/pages/FlashcardSetsRouter';
 import HomePage from 'Client/components/pages/HomePage';
 
 const App = () =>
@@ -12,6 +13,7 @@ const App = () =>
     <Page>
       <Switch>
         <Route path="/words" component={WordsRouter} />
+        <Route path="/flashcard-sets" component={FlashcardSetsRouter} />
         <Route exact path="/" component={HomePage} />
         <Route path="*" render={() => <div>Not found</div>} />
       </Switch>

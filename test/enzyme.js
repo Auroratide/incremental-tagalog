@@ -31,6 +31,7 @@ class MountContext {
     }, <MemoryRouter initialEntries={[this.route]} initialIndex={0}>
       <Switch>
         <Route path='/words' render={() => component} />
+        <Route path='/flashcard-sets' render={() => component} />
         <Route path='' render={() => component} />
       </Switch>
     </MemoryRouter>));
