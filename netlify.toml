@@ -1,0 +1,18 @@
+[Settings]
+  ID = "incremental-tagalog"
+
+[build]
+  publish = "public"
+  command = "npm run ci"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/index.html"
+  status = 404
+  force = false
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
