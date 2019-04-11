@@ -4,7 +4,8 @@ import styles from './style';
 
 const HomePage = () =>
   <div className={styles['home-page']}>
-    <Card to="/words">Index</Card>
+    <Card className={styles.card} to="/words">Index</Card>
+    <Card className={styles.card} to="/flashcard-sets">Flashcards</Card>
   </div>;
 
 export default HomePage;
