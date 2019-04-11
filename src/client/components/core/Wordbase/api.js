@@ -5,8 +5,7 @@ const map = raw => ( {
   tagalog: raw.tagalog,
   english: raw.english,
   definition: raw.definition,
-  partOfSpeech: raw.part_of_speech,
-  set: raw.set
+  partOfSpeech: raw.part_of_speech
 } );
 
 export const get = () => axios.get('/api/words/index.json')
