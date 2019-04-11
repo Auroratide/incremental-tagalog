@@ -8,4 +8,9 @@
 
 .title {
   font-size: var(--typography-lg);
+  color: var(--palette-black);
+}
+
+.title:hover {
+  text-decoration: none;
 }
