@@ -6,7 +6,7 @@
   "scripts": {
     "start": "serve -l 3000",
     "start:watch": "npm run build && npm-run-all --parallel build:webpack:watch start",
-    "build": "npm-run-all build:webpack build:html build:words",
+    "build": "npm-run-all build:webpack build:html build:words build:flashcard-sets",
     "build:webpack": "webpack --config webpack/dev.config.js",
     "build:webpack:watch": "webpack --config webpack/dev.config.js --watch",
     "build:webpack:prod": "webpack --confi webpack/prod.config.js",
