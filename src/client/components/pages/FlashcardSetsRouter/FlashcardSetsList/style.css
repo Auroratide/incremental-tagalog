@@ -1,0 +1,15 @@
+@import "theme";
+
+@media (--breakpoint-md) {
+  .lists {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (--breakpoint-lg) {
+  .lists {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

@@ -6,4 +6,8 @@ export default class Query {
   set(id) {
     return this.sets.find(s => s.id === id);
   }
+
+  all() {
+    return this.sets;
+  }
 }

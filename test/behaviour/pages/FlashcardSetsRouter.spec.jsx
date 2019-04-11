@@ -36,6 +36,11 @@ describe('FlashcardSetsRouter Behaviour', () => {
           .withId('set-1')
           .withName('Set 1')
           .withWords(['salamat'])
+          .build(),
+        new FlashcardSetBuilder()
+          .withId('set-2')
+          .withName('Set 2')
+          .withWords(['kumasta'])
           .build()
         ]});
   });
@@ -50,6 +55,18 @@ describe('FlashcardSetsRouter Behaviour', () => {
       wrapper.update();
       
       expect(wrapper.text()).toContain('Set 1');
+    });
+  });
+
+  describe('Flashcard Set List', () => {
+    it('should render the flashcard sets list', async () => {
+      const wrapper = page('');
+
+      await allActionsToComplete();
+      wrapper.update();
+
+      expect(wrapper.text()).toContain('Set 1');
+      expect(wrapper.text()).toContain('Set 2');
     });
   });
 
