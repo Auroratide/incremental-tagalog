@@ -21,7 +21,8 @@
     "test:all": "npm-run-all test:unit test:behaviour",
     "test:unit": "NODE_ENV=test jest test/unit",
     "test:behaviour": "NODE_ENV=test jest test/behaviour",
-    "components:create": "node scripts/components/create"
+    "components:create": "node scripts/components/create",
+    "words:create": "node scripts/words/create"
   },
   "author": "",
   "license": "ISC",
