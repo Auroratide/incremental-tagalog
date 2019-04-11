@@ -6,11 +6,14 @@ import WordBase from 'Client/components/core/Wordbase';
 import WordBuilder from 'Test/builders/WordBuilder';
 
 import FlashcardSet from 'Client/components/pages/FlashcardSetsRouter/FlashcardSetPage/FlashcardSet';
+import Flashcard from 'Client/components/pages/FlashcardSetsRouter/FlashcardSetPage/FlashcardSet/Flashcard';
 
 describe('FlashcardSet Behaviour', () => {
   let wrapper;
-  const currentWord = () => wrapper.find('.word').text();
-  const clickNext = () => wrapper.find('button').at(1).simulate('click');
+  const currentWord = () => wrapper.find(Flashcard).text();
+  const clickNext = () => wrapper.find('.buttons button').at(1).simulate('click');
+  const flipCard = () => wrapper.find('.flip-button').at(0).simulate('click');
+  const definitionShowing = () => wrapper.find('.showing-definition').exists();
   
   beforeEach(async () => {
     http
@@ -44,5 +47,13 @@ describe('FlashcardSet Behaviour', () => {
     clickNext();
 
     expect(currentWord()).not.toEqual(firstWord);
+  });
+
+  it('should flip the card over', () => {
+    expect(definitionShowing()).toBe(false);
+
+    flipCard();
+
+    expect(definitionShowing()).toBe(true);
   });
 });

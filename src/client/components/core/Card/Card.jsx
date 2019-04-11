@@ -5,19 +5,20 @@ import { renderIfElse } from 'Client/lib/render-if';
 import classnames from 'classnames';
 import styles from './style';
 
-const Card = ({ to, children }) => renderIfElse(to, () =>
-  <Link to={to} className={classnames(styles.card, styles.linked)}>
+const Card = ({ to, children, className }) => renderIfElse(to, () =>
+  <Link to={to} className={classnames(styles.card, styles.linked, className)}>
     {children}
   </Link>
 ).elseRender(() =>
-  <div className={styles.card}>
+  <div className={classnames(styles.card, className)}>
     {children}
   </div>
 );
 
 Card.propTypes = {
   to: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string
 };
 
 export default Card;

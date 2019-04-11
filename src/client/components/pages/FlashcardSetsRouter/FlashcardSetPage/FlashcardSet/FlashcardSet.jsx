@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'Client/prop-types';
 import Button from 'Client/components/core/Button';
+import Flashcard from './Flashcard';
 import { useIncrementor } from './hooks';
 import styles from './style';
 
@@ -10,7 +11,7 @@ const FlashcardSet = ({ name, words = [] }) => {
   return (
     <div className={styles['flashcard-set']}>
       <h1>{name}</h1>
-      <div className={styles.word}>{words[index]}</div>
+      <Flashcard word={words[index]} definition="Definition is here" />
       <div className={styles.buttons}>
         <Button onClick={decrement}>&lt;</Button>
         <Button onClick={increment}>&gt;</Button>

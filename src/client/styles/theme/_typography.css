@@ -1,6 +1,10 @@
 :root {
   --typography-sans: "Nunito", sans-serif;
 
+  --typography-light: 300;
+  --typography-normal: 400;
+  --typography-bold: 700;
+
   --typography-md: 1rem;
   --typography-lg: 1.25rem;
 }
