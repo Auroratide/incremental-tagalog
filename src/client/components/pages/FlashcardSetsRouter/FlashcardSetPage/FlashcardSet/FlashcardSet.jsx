@@ -7,7 +7,7 @@ import Wordbase from 'Client/components/core/Wordbase';
 import styles from './style';
 
 const FlashcardSet = ({ name, words = [] }) => {
-  const [index, increment, decrement] = useIncrementor(words.length);
+  const [index, next, previous] = useIncrementor(words.length);
 
   return (
     <div className={styles['flashcard-set']}>
@@ -17,8 +17,8 @@ const FlashcardSet = ({ name, words = [] }) => {
         return <Flashcard word={word.tagalog} definition={word.definition} />;
       }}</Wordbase.Consumer>
       <div className={styles.buttons}>
-        <Button onClick={decrement}>&lt;</Button>
-        <Button onClick={increment}>&gt;</Button>
+        <Button onClick={previous}>&lt;</Button>
+        <Button onClick={next}>&gt;</Button>
       </div>
     </div>
   );
