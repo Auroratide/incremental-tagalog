@@ -6,7 +6,7 @@ import styles from './style';
 const FlashcardSetsList = () =>
   <FlashcardSets.Consumer>{({ query }) =>
     <div className={styles.list}>
-      {query.all().map(set => <Card key={set.id} to={`/flashcard-sets/${set.id}`}>{set.name}</Card>)}
+      {query.all().map(set => <Card key={set.id} className={styles.card} to={`/flashcard-sets/${set.id}`}>{set.name}</Card>)}
     </div>
   }</FlashcardSets.Consumer>;
 

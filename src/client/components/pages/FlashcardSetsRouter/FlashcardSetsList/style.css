@@ -1,7 +1,11 @@
 @import "theme";
 
+.card {
+  text-align: center;
+}
+
 @media (--breakpoint-md) {
-  .lists {
+  .list {
     display: grid;
     gap: 0.5rem;
     grid-template-columns: repeat(3, 1fr);
@@ -9,7 +13,7 @@
 }
 
 @media (--breakpoint-lg) {
-  .lists {
+  .list {
     grid-template-columns: repeat(6, 1fr);
   }
 }
