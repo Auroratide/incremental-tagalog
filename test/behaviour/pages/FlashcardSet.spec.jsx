@@ -14,6 +14,8 @@ describe('FlashcardSet Behaviour', () => {
   const clickNext = () => wrapper.find('.buttons button').at(1).simulate('click');
   const flipCard = () => wrapper.find('.flip-button').at(0).simulate('click');
   const definitionShowing = () => wrapper.find('.showing-definition').exists();
+  const getWord = () => wrapper.find('.front').at(0).text();
+  const getDefinition = () => wrapper.find('.back').at(0).text();
   
   beforeEach(async () => {
     http
@@ -25,8 +27,8 @@ describe('FlashcardSet Behaviour', () => {
           .withDefinition('thank you')
           .build(),
         new WordBuilder()
-          .withId('kumasta')
-          .withTagalog('kumasta')
+          .withId('kumusta')
+          .withTagalog('kumusta')
           .withDefinition('hello')
           .build()]
       });
@@ -55,5 +57,12 @@ describe('FlashcardSet Behaviour', () => {
     flipCard();
 
     expect(definitionShowing()).toBe(true);
+  });
+
+  it('should show word with corresponding definition', () => {
+    const showsSalamat = getWord().includes('salamat') && getDefinition().includes('thank you');
+    const showsKumusta = getWord().includes('kumusta') && getDefinition().includes('hello');
+
+    expect(showsSalamat || showsKumusta).toBe(true);
   });
 });
