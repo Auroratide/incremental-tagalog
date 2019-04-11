@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'Client/prop-types';
+import Button from 'Client/components/core/Button';
 import { useIncrementor } from './hooks';
 import styles from './style';
 
@@ -11,8 +12,8 @@ const FlashcardSet = ({ name, words = [] }) => {
       <h1>{name}</h1>
       <div className={styles.word}>{words[index]}</div>
       <div className={styles.buttons}>
-        <button onClick={decrement}>Decrement</button>
-        <button className={styles.next} onClick={increment}>Increment</button>
+        <Button onClick={decrement}>&lt;</Button>
+        <Button onClick={increment}>&gt;</Button>
       </div>
     </div>
   );

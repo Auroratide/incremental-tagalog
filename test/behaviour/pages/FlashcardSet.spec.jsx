@@ -10,7 +10,7 @@ import FlashcardSet from 'Client/components/pages/FlashcardSetsRouter/FlashcardS
 describe('FlashcardSet Behaviour', () => {
   let wrapper;
   const currentWord = () => wrapper.find('.word').text();
-  const clickNext = () => wrapper.find('.next').simulate('click');
+  const clickNext = () => wrapper.find('button').at(1).simulate('click');
   
   beforeEach(async () => {
     http
