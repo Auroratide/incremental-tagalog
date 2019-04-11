@@ -7,6 +7,10 @@
   margin-bottom: 1rem;
 }
 
+.flashcard p {
+  font-size: var(--typography-lg);
+}
+
 .flashcard .front, .flashcard .back {
   transition: transform 1s;
   backface-visibility: hidden;
