@@ -1,5 +1,5 @@
 [Settings]
-  ID = "incremental-tagalog"
+  ID = "incrementaltagalog"
 
 [build]
   publish = "public"
