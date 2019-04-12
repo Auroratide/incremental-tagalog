@@ -43,6 +43,7 @@
   font-weight: var(--typography-bold);
   opacity: 0.5;
   padding: 0.25em 1em;
+  cursor: pointer;
 }
 
 .flip-button:hover {
