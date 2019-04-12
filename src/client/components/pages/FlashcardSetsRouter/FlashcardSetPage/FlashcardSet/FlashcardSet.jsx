@@ -4,6 +4,7 @@ import Button from 'Client/components/core/Button';
 import Flashcard from './Flashcard';
 import { useIncrementor, useShuffler } from './hooks';
 import Wordbase from 'Client/components/core/Wordbase';
+import Dots from './Dots';
 import styles from './style';
 
 const FlashcardSet = ({ name, words }) => {
@@ -19,6 +20,7 @@ const FlashcardSet = ({ name, words }) => {
       }}</Wordbase.Consumer>
       <div className={styles.buttons}>
         <Button onClick={previous}>&lt;</Button>
+        <Dots number={shuffledWords.length} position={index} />
         <Button onClick={next}>&gt;</Button>
       </div>
       <div className={styles['shuffle-button-container']}>

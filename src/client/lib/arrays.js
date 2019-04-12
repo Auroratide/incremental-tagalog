@@ -11,3 +11,5 @@ export const shuffle = (arr) => {
 
   return a;
 };
+
+export const iterate = n => new Array(n).fill(0);

@@ -16,6 +16,9 @@ describe('FlashcardSet Behaviour', () => {
   const definitionShowing = () => wrapper.find('.showing-definition').exists();
   const getWord = () => wrapper.find('.front').at(0).text();
   const getDefinition = () => wrapper.find('.back').at(0).text();
+  const dotPosition = () => wrapper.find('.dot').reduce((position, node, index) => {
+    return node.hasClass('selected') ? index : position;
+  }, 0);
   
   beforeEach(async () => {
     http
@@ -64,5 +67,13 @@ describe('FlashcardSet Behaviour', () => {
     const showsKumusta = getWord().includes('kumusta') && getDefinition().includes('hello');
 
     expect(showsSalamat || showsKumusta).toBe(true);
+  });
+
+  it('should highlight next dot when next word is clicked', () => {
+    expect(dotPosition()).toBe(0);
+    
+    clickNext();
+
+    expect(dotPosition()).toBe(1);
   });
 });
