@@ -8,7 +8,7 @@ import styles from './style';
 
 const FlashcardSet = ({ name, words }) => {
   const [index, next, previous] = useIncrementor(words.length);
-  const [shuffledWords] = useShuffler(words);
+  const [shuffledWords, shuffle] = useShuffler(words);
 
   return (
     <div className={styles['flashcard-set']}>
@@ -20,6 +20,9 @@ const FlashcardSet = ({ name, words }) => {
       <div className={styles.buttons}>
         <Button onClick={previous}>&lt;</Button>
         <Button onClick={next}>&gt;</Button>
+      </div>
+      <div className={styles['shuffle-button-container']}>
+        <Button onClick={shuffle}>Shuffle</Button>
       </div>
     </div>
   );

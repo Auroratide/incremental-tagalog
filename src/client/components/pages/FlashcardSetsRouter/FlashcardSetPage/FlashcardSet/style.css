@@ -3,4 +3,10 @@
 .buttons {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.shuffle-button-container {
+  display: flex;
+  justify-content: center;
 }
